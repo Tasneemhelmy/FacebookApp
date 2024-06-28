@@ -16,6 +16,9 @@ const userModel=sequelize.define('user',{
     password:{
         type: DataTypes.STRING(200),
         allowNull:false
+    }, logIn:{
+        type: DataTypes.BOOLEAN,
+        defaultValue:true
     }
 },{
     timestamps:false

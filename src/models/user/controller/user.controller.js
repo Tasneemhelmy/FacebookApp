@@ -38,3 +38,18 @@ export const logIn =async(req,res,next)=>{
     return res.status(404).json({message:"Sorry, you should signUp first🤔"})
 
 }
+//----------------------------------logout---------------------------------
+
+export const logOut= async(req,res,next)=>{
+const logout= await userModel.findOne({
+    where:{
+        id:req.params.id,
+        logIn:true
+    }
+})
+if(logout){
+    await logout.update({logIn:false})
+    return res.status(200).json({message:"You are logged out!!"})
+} 
+return res.status(409).json({message:"You are not logged in!!"})
+}

@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
-const sequelize = new Sequelize('assignment_6', 'root', '', {
-    host: 'localhost',
+const sequelize = new Sequelize('b1rivbil6iqxve567pkc', 'ulv9u8b2bkpwwrtc', 'zrynIrB421DXV9aAxQCn', {
+    host: 'b1rivbil6iqxve567pkc-mysql.services.clever-cloud.com',
     dialect: 'mysql'
 });
 

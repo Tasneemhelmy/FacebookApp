@@ -54,6 +54,7 @@ export const deletePost=async(req,res,next)=>{
 post’s comments.*/
 export const userWithPostsAndComments=async(req,res,next)=>{
     const user=await userModel.findAll({
+        
         include:{
             model:postModel,
             attributes:["title"],
@@ -61,6 +62,8 @@ export const userWithPostsAndComments=async(req,res,next)=>{
                 model:commentModel,
                 attributes:["content"]
         }
+    },attributes:{
+        exclude:["password"]
     }
     })
 
